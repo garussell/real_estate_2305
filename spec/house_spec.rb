@@ -6,6 +6,8 @@ RSpec.describe House do
     @house = House.new("$400000", "123 sugar lane")
     @room_1 = Room.new(:bedroom, 10, '13')
     @room_2 = Room.new(:bedroom, 11, '15')   
+    @room_3 = Room.new(:living_room, 25, '15')
+    @room_4 = Room.new(:basement, 30, '41')
   end
 
   describe "#exists" do
@@ -30,7 +32,13 @@ RSpec.describe House do
     it "has rooms" do
       @house.add_room(@room_1)
       @house.add_room(@room_2)
-      expect(@house.rooms(@room_1)).to eq [@room_1, @room_2] 
+      expect(@house.rooms).to eq [@room_1, @room_2] 
+    end
+  end
+
+  describe "#above_market_average?" do
+    it "compares price to market average" do
+      expect(@house.above_market_average?).to be false
     end
   end
 end
