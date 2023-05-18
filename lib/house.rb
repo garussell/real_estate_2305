@@ -36,4 +36,10 @@ class House
       room.category == category
     end
   end
+
+  def area
+    @rooms.map do |room|
+      room.lengths * room.widths.to_i
+    end
+  end
 end
