@@ -1,10 +1,12 @@
 class House
   attr_reader :price
               :address
+              :rooms
 
   def initialize(price, address)
     @price = price
     @address = address
+    @rooms = []
   end
 
   def price
@@ -13,5 +15,13 @@ class House
 
   def address
     @address
+  end
+
+  def rooms
+    @rooms
+  end
+
+  def add_room(room)
+    @rooms << room
   end
 end
