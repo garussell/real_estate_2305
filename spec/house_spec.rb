@@ -41,4 +41,11 @@ RSpec.describe House do
       expect(@house.above_market_average?).to be false
     end
   end
+
+  describe "#rooms_from_category" do
+    it "can sort rooms by category" do
+      expect(@house.rooms_from_category(:bedroom)).to eq [room_1, room_2]
+      expect(@house.rooms_from_category(:basement)).to eq [room_4]
+    end
+  end
 end
