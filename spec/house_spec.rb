@@ -19,4 +19,18 @@ RSpec.describe House do
       expect(@house.price).to eq 400000
     end
   end
+
+  describe "#address" do
+    it "has an address" do
+      expect(@house.address).to eq "123 sugar lane"
+    end
+  end
+
+  describe "#add_room" do
+    it "has rooms" do
+      @house.add_room(@room_1)
+      @house.add_room(@room_2)
+      expect(@house.rooms(@room_1)).to eq [@room_1, @room_2] 
+    end
+  end
 end
