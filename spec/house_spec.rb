@@ -16,7 +16,7 @@ RSpec.describe House do
 
   describe "#price" do
     it "has a price" do
-      expect(house.price).to eq 400000
+      expect(@house.price).to eq 400000
     end
   end
 end
