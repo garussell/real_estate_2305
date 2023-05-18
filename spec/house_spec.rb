@@ -52,4 +52,14 @@ RSpec.describe House do
       expect(@house.rooms_from_category(:basement)).to eq [@room_4]
     end
   end
+
+  describe "#area" do
+    it "can calculate area" do
+      @house.add_room(@room_1)
+      @house.add_room(@room_2)
+      @house.add_room(@room_3)
+      @house.add_room(@room_4)
+      expect(@house.area).to eq 1900
+    end
+  end
 end
