@@ -30,4 +30,10 @@ class House
     return true if price > @market_average
     false
   end
+
+  def rooms_from_category(category)
+    @rooms.select do |room|
+      room.category == category
+    end
+  end
 end
